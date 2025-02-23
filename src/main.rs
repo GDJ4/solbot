@@ -372,7 +372,7 @@ async fn buy_token(
 
     // 3. Инструкция compute unit
     let compute_start = Instant::now();
-    let optimal_compute_units: u32 = 70_000;
+    let optimal_compute_units: u32 = 90_000;
     let compute_limit_ix = solana_sdk::compute_budget::ComputeBudgetInstruction::set_compute_unit_limit(optimal_compute_units);
     let compute_unit_ix = solana_sdk::compute_budget::ComputeBudgetInstruction::set_compute_unit_price(33_333_335);
     info!("[{} ms] [buy_token] Инструкция compute unit сформирована ({} ms).", global_start.elapsed().as_millis(), compute_start.elapsed().as_millis());

@@ -615,26 +615,26 @@ async fn main() -> Result<()> {
                                                                 Ok(mint_pubkey) => {
                                                                     let (bonding_curve, _bump) = get_bonding_curve_address(&mint_pubkey, &PUMP_PROGRAM);
                                                                     let associated_bonding_curve = find_associated_bonding_curve(&mint_pubkey, &bonding_curve);
-                                                                    let buy_start = Instant::now();
-                                                                    match buy_token(
-                                                                        &rpc_client1,
-                                                                        &rpc_client,
-                                                                        mint_pubkey,
-                                                                        bonding_curve,
-                                                                        associated_bonding_curve,
-                                                                        BUY_AMOUNT,
-                                                                        BUY_SLIPPAGE,
-                                                                        MAX_RETRIES,
-                                                                        &global_start,
-                                                                        latest_blockhash.clone(), // передаём разделяемую переменную
-                                                                    ).await {
-                                                                        Ok(_) => info!("[{} ms] [main] Покупка токена для mint {} выполнена успешно ({} ms).", global_start.elapsed().as_millis(), mint, buy_start.elapsed().as_millis()),
-                                                                        Err(e) => error!("[{} ms] [main] Ошибка при покупке токена для mint {}: {:?} ({} ms).", global_start.elapsed().as_millis(), mint, e, buy_start.elapsed().as_millis()),
-                                                                    }
-                                                                },
-                                                                Err(e) => {
-                                                                    error!("[{} ms] [main] Ошибка преобразования mint в Pubkey: {:?}.", global_start.elapsed().as_millis(), e);
-                                                                }
+                                                                    // let buy_start = Instant::now();
+                                                                //     match buy_token(
+                                                                //         &rpc_client1,
+                                                                //         &rpc_client,
+                                                                //         mint_pubkey,
+                                                                //         bonding_curve,
+                                                                //         associated_bonding_curve,
+                                                                //         BUY_AMOUNT,
+                                                                //         BUY_SLIPPAGE,
+                                                                //         MAX_RETRIES,
+                                                                //         &global_start,
+                                                                //         latest_blockhash.clone(), // передаём разделяемую переменную
+                                                                //     ).await {
+                                                                //         Ok(_) => info!("[{} ms] [main] Покупка токена для mint {} выполнена успешно ({} ms).", global_start.elapsed().as_millis(), mint, buy_start.elapsed().as_millis()),
+                                                                //         Err(e) => error!("[{} ms] [main] Ошибка при покупке токена для mint {}: {:?} ({} ms).", global_start.elapsed().as_millis(), mint, e, buy_start.elapsed().as_millis()),
+                                                                //     }
+                                                                // },
+                                                                // Err(e) => {
+                                                                //     error!("[{} ms] [main] Ошибка преобразования mint в Pubkey: {:?}.", global_start.elapsed().as_millis(), e);
+                                                                // }
                                                             }
                                                         } else {
                                                             info!("[{} ms] [main] Mint {} уже обработан.", global_start.elapsed().as_millis(), mint);

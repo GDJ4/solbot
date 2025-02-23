@@ -38,20 +38,20 @@ extern crate lazy_static;
 // Параметры мониторинга и покупки
 
 const HELIUS_HTTP_URL: &str =
-    "https://multi-responsive-pond.solana-mainnet.quiknode.pro/0fadc4fa656e6c165a50f6c8bc2e0be60390fc61";
+    "https://thrilling-fittest-log.solana-mainnet.quiknode.pro/e5e3a2b6831fd393d1411d56e1e827b742ad57b3";
 const HELIUS_WS_URL: &str =
-    "wss://mainnet.helius-rpc.com/?api-key=ba4e3300-c5d6-436f-9a13-7c4c0dd33cdc";
-const OWNER_PUBKEY: &str = "C82nf68q5kv3EaGq9VcbZTUd51XZpxZJExqRXXwbQuTg";
+    "wss://mainnet.helius-rpc.com/?api-key=599e8cf5-326a-45f5-bf87-28e11694b53c";
+const OWNER_PUBKEY: &str = "AJJUdocriJ3yTV6zqU4S8h5EpPeQBMsscru2Hysy6yHD";
 
 const BUY_AMOUNT: f64 = 0.001;
 const BUY_SLIPPAGE: f64 = 999.0;
 const MAX_RETRIES: usize = 5;
 
 const RPC_ENDPOINT: &str =
-    "https://solana-api.instantnodes.io/token-S5IIepeSQUNnMMPoI3cmz1PFuuGB7ISA";
+    "https://nd-515-068-787.p2pify.com/3b5330af059bfe5e13b03acadfe42ee9";
 
 const RPC_ENDPOINT1: &str =
-    "https://mainnet.helius-rpc.com/?api-key=ba4e3300-c5d6-436f-9a13-7c4c0dd33cdc";
+    "https://mainnet.helius-rpc.com/?api-key=599e8cf5-326a-45f5-bf87-28e11694b53c";
 // ====================================================================
 // Константы для расчётов
 
@@ -135,7 +135,7 @@ async fn fetch_latest_blockhash(rpc_url: &str) -> Result<Hash> {
 }
 
 // ====================================================================
-// Функция, которая каждые 400 мс обновляет разделяемую переменную с последним blockhash
+// Функция, которая каждые 2 с обновляет разделяемую переменную с последним blockhash
 
 async fn poll_latest_blockhash(rpc_url: &str, latest_blockhash: Arc<Mutex<Hash>>) {
     loop {
@@ -150,7 +150,7 @@ async fn poll_latest_blockhash(rpc_url: &str, latest_blockhash: Arc<Mutex<Hash>>
                 error!("Ошибка получения blockhash: {:?}", e);
             }
         }
-        sleep(Duration::from_millis(400)).await;
+        sleep(Duration::from_millis(2000)).await;
     }
 }
 

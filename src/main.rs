@@ -632,10 +632,10 @@ async fn main() -> Result<()> {
                                                             //             Err(e) => error!("[{} ms] [main] Ошибка при покупке токена для mint {}: {:?} ({} ms).", global_start.elapsed().as_millis(), mint, e, buy_start.elapsed().as_millis()),
                                                             //         }
                                                             //     },
-                                                                Err(e) => {
-                                                                    error!("[{} ms] [main] Ошибка преобразования mint в Pubkey: {:?}.", global_start.elapsed().as_millis(), e);
-                                                                }
-                                                            }
+                                                            //     Err(e) => {
+                                                            //         error!("[{} ms] [main] Ошибка преобразования mint в Pubkey: {:?}.", global_start.elapsed().as_millis(), e);
+                                                            //     }
+                                                            // }
                                                         } 
                                                         else {
                                                             info!("[{} ms] [main] Mint {} уже обработан.", global_start.elapsed().as_millis(), mint);

@@ -41,7 +41,7 @@ const HELIUS_HTTP_URL: &str =
     "https://thrilling-fittest-log.solana-mainnet.quiknode.pro/e5e3a2b6831fd393d1411d56e1e827b742ad57b3";
 const HELIUS_WS_URL: &str =
     "wss://mainnet.helius-rpc.com/?api-key=599e8cf5-326a-45f5-bf87-28e11694b53c";
-const OWNER_PUBKEY: &str = "AJJUdocriJ3yTV6zqU4S8h5EpPeQBMsscru2Hysy6yHD";
+const OWNER_PUBKEY: &str = "7ELKbhJVEEHUQEif1stTbphJuJRdVioFtEx1jKWtsRTp";
 
 const BUY_AMOUNT: f64 = 0.001;
 const BUY_SLIPPAGE: f64 = 999.0;

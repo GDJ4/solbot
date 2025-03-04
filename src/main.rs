@@ -170,7 +170,7 @@ async fn get_token_mints(http_url: &str, owner: &str) -> Result<Vec<String>> {
         "params": [
             owner,
             { "programId": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA" },
-            { "encoding": "jsonParsed", "commitment": "processed" }
+            { "encoding": "jsonParsed", "commitment": "finalized" }
         ]
     });
     info!("[{} ms] [get_token_mints] Payload сформирован ({} ms).", func_start.elapsed().as_millis(), payload_start.elapsed().as_millis());
